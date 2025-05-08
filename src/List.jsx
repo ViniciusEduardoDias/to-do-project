@@ -1,10 +1,21 @@
+import { FaCheckCircle } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+
 function List({ items }) {
   return (
-    <ul className="flex flex-col px-10 gap-3">
+    <ul className="flex flex-col items px-8 rounded-md gap-3">
       {items.map((item) => (
         <li key={item.id}>
-          <div>
+          <div className="w-full bg-white flex justify-between gap-2 items-center rounded-md px-4 py-2">
             <p>{item.text}</p>
+            <div className="flex gap-2">
+              <button className="rounded-full p-1.5 hover:bg-black hover:text-white">
+                <FaCheckCircle />
+              </button>
+              <button className="rounded-full p-1.5 hover:bg-black hover:text-white">
+                <FaTrashAlt />
+              </button>
+            </div>
           </div>
         </li>
       ))}

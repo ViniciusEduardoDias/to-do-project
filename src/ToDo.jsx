@@ -14,9 +14,11 @@ function ToDo() {
 
   return (
     <div className="bg-slate-100 min-h-screen">
-      <Header />
-      <ToDoForm addItem={AddItem} />
-      <List items={items} />
+      <div className="max-w-[900px] m-auto">
+        <Header />
+        <ToDoForm addItem={AddItem} />
+        <List items={items} />
+      </div>
     </div>
   );
 }
