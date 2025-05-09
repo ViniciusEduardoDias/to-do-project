@@ -26,7 +26,7 @@ function List({ items, onDeleteItem, onCheckItem }) {
                 {item.checked ? (
                   <FaCheckCircle className="text-green-600 hover:text-white" />
                 ) : (
-                  "finalizar?"
+                  "concluído?"
                 )}
               </button>
               <button
