@@ -1,8 +1,5 @@
 import { useState } from "react";
-
-import Header from "./Header";
-import ToDoForm from "./ToDoForm";
-import List from "./List";
+import { Header, ToDoForm, List, Footer } from "./components";
 
 function ToDo() {
   const [items, setItems] = useState([]);
@@ -35,6 +32,7 @@ function ToDo() {
           onDeleteItem={onDeleteItem}
         />
       </div>
+      <Footer />
     </div>
   );
 }

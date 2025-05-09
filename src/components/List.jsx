@@ -10,13 +10,17 @@ function List({ items, onDeleteItem, onCheckItem }) {
             <p>{item.text}</p>
             <div className="flex gap-2">
               <button
-                className="rounded-full p-1.5 hover:bg-black hover:text-white"
+                className="rounded-full p-1.5 hover:bg-green-700 hover:text-white"
                 onClick={() => onCheckItem(item.id)}
               >
-                {item.checked ? <FaCheckCircle /> : "feito?"}
+                {item.checked ? (
+                  <FaCheckCircle className="text-green-600 hover:text-white" />
+                ) : (
+                  "finalizado?"
+                )}
               </button>
               <button
-                className="rounded-full p-1.5 hover:bg-black hover:text-white"
+                className="rounded-full p-1.5 hover:bg-red-700 hover:text-white"
                 onClick={() => onDeleteItem(item.id)}
               >
                 <FaTrashAlt />
