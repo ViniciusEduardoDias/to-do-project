@@ -13,8 +13,10 @@ function ToDoForm({ addItem }) {
 
   return (
     <div className="p-8 flex flex-col max-w-[900px] m-auto gap-4">
-      <h2 className="text-xl">Preencha com seu item para adicionar na lista</h2>
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <h2 className="text-xl">
+        Preencha com seu item para adicionar na lista!
+      </h2>
+      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-2">
         <Input
           value={text}
           onChange={(e) => setText(e.target.value)}
