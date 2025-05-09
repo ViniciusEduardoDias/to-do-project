@@ -1,13 +1,23 @@
-import { FaCheckCircle } from "react-icons/fa";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaCheckCircle, FaTrashAlt } from "react-icons/fa";
 
 function List({ items, onDeleteItem, onCheckItem }) {
+  // Ordenar os itens: finalizados primeiro
+  const sortedItems = [...items].sort((a, b) =>
+    a.checked === b.checked ? 0 : a.checked ? -1 : 1
+  );
+
   return (
-    <ul className="flex flex-col items px-8 rounded-md gap-3">
-      {items.map((item) => (
+    <ul className="flex flex-col px-8 rounded-md gap-3">
+      {sortedItems.map((item) => (
         <li key={item.id}>
           <div className="w-full bg-white flex justify-between gap-2 items-center rounded-md px-4 py-2">
-            <p>{item.text}</p>
+            <p
+              className={`text-base ${
+                item.checked ? "line-through text-gray-400" : ""
+              }`}
+            >
+              {item.text}
+            </p>
             <div className="flex gap-2">
               <button
                 className="rounded-full p-1.5 hover:bg-green-700 hover:text-white"
@@ -16,7 +26,7 @@ function List({ items, onDeleteItem, onCheckItem }) {
                 {item.checked ? (
                   <FaCheckCircle className="text-green-600 hover:text-white" />
                 ) : (
-                  "finalizado?"
+                  "finalizar?"
                 )}
               </button>
               <button
