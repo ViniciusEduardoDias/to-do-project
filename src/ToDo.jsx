@@ -44,7 +44,10 @@ function ToDo() {
         </header>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
-            <ToDoForm addItem={AddItem} />
+            <ToDoForm
+              addItem={AddItem}
+              onCloseModal={() => setShowModal(false)}
+            />
           </Modal>
         )}
         <List

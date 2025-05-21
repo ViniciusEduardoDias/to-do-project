@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 
-function ToDoForm({ addItem }) {
+function ToDoForm({ addItem, onCloseModal }) {
   const [text, setText] = useState("");
 
   const handleSubmit = (e) => {
@@ -9,6 +9,7 @@ function ToDoForm({ addItem }) {
     if (!text.trim()) return;
     addItem(text);
     setText("");
+    onCloseModal();
   };
 
   return (
